@@ -12,6 +12,8 @@ public class App
         showTablero(tablero);
         String ficha = tirada%2==0? "X":"O";
         juegaPlayer("X", tablero);
+
+        evaluateWin(tablero);
         tirada++;
        } while(true);     
     
@@ -30,6 +32,25 @@ public class App
 
     tablero[posicion] = ficha;
    }
+
+   public static boolean evaluateWin(String tablero[]) {
+    if(tablero[0].equals(tablero[1]) && tablero[0].equals(tablero[2]) && !tablero[0].equals("_")) {
+     return true;
+    }else if(tablero[3].equals(tablero[4]) && tablero[3].equals(tablero[5]) && !tablero[3].equals("_")) {
+    return true;
+    }else if(tablero[6].equals(tablero[7]) && tablero[6].equals(tablero[8]) && !tablero[6].equals("_")) {
+        return true;
+    }else if(tablero[0].equals(tablero[3]) && tablero[0].equals(tablero[6]) && !tablero[0].equals("_")) {
+   return true;
+    }else if(tablero[1].equals(tablero[4]) && tablero[1].equals(tablero[7]) && !tablero[1].equals("_")) {
+        return true;
+    }else if(tablero[2].equals(tablero[5]) && tablero[2].equals(tablero[8]) && !tablero[2].equals("_")) {
+        return true;
+    }else if(tablero[0].equals(tablero[4]) && tablero[0].equals(tablero[8]) && !tablero[0].equals("_")) {
+        return true;
+    }else if(tablero[2].equals(tablero[4]) && tablero[2].equals(tablero[6]) && !tablero[2].equals("_")) {
+        return true;
+    }
 
   
 
