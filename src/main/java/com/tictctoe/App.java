@@ -8,14 +8,16 @@ public class App
     {
         String [] tablero = {"_","_","_","_","_","_","_","_","_","_"};
         int tirada = 0;
+        boolean alguienGano = false;
     do {    
         showTablero(tablero);
         String ficha = tirada%2==0? "X":"O";
-        juegaPlayer("X", tablero);
+        juegaPlayer(ficha, tablero);
 
-        evaluateWin(tablero);
+       alguienGano = evaluateWin(tablero);
+       if(alguienGano)System.out.println("Has ganado, player " + ficha + " felicidades!!!");
         tirada++;
-       } while(true);     
+       } while(!alguienGano);     
     
     }
 
@@ -33,7 +35,7 @@ public class App
     tablero[posicion] = ficha;
    }
 
-   public static boolean evaluateWin(String tablero[]) {
+    static boolean evaluateWin(String tablero[]) {
     if(tablero[0].equals(tablero[1]) && tablero[0].equals(tablero[2]) && !tablero[0].equals("_")) {
      return true;
     }else if(tablero[3].equals(tablero[4]) && tablero[3].equals(tablero[5]) && !tablero[3].equals("_")) {
@@ -52,8 +54,8 @@ public class App
         return true;
     }
 
-  
+    return false;
 
-
+  }
 }
 
