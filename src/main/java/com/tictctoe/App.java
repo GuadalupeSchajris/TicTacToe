@@ -4,6 +4,11 @@ import java.util.Scanner;
 
 public class App 
 {
+    public static final String RESET = "\u001B[0m";
+    public static final String COLOR_TABLERO = "\u001B[33m"; 
+    public static final String COLOR_X = "\u001B[34m"; 
+    public static final String COLOR_O = "\u001B[35m"; 
+
     public static void main( String[] args )
     {
         Scanner lector = new Scanner(System.in);
@@ -45,9 +50,18 @@ public class App
     }
 
     static void showTablero(String [] tablero) {
-        System.out.println(tablero[0] + " | "+ tablero[1]+" | " + tablero[2]);
-        System.out.println(tablero[3] + " | "+ tablero[4]+" | " + tablero[5]);
-        System.out.println(tablero[6] + " | "+ tablero[7]+" | " + tablero[8]);
+        for (int i = 0; i < tablero.length; i++) {
+            String color = tablero[i].equals("X") ? COLOR_X : tablero[i].equals("O") ? COLOR_O : COLOR_TABLERO;
+            System.out.print(COLOR_TABLERO + " " + color + tablero[i] + COLOR_TABLERO + " " + RESET);
+            if ((i + 1) % 3 == 0) {
+                System.out.println();
+                if (i < 6) {
+                    System.out.println(COLOR_TABLERO + "---+---+---" + RESET);
+                }
+            } else {
+                System.out.print(COLOR_TABLERO + "|" + RESET);
+            }
+        }
     }
 
     static void juegaPlayer(String ficha, String[] tablero, Scanner lector) {
