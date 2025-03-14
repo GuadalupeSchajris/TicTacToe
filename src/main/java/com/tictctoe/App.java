@@ -11,6 +11,11 @@ public class App
 
     public static void main( String[] args )
     {
+        System.out.println("Bienvenido al juego de Tic Tac Toe!");
+        System.out.println("Instrucciones:");
+        System.out.println("- El tablero tiene posiciones numeradas del 0 al 8, de izquierda a derecha y de arriba hacia abajo.");
+        System.out.println("- Cada jugador (X o O) elige una posición para colocar su ficha, buena suerte!!.\n");
+ 
         Scanner lector = new Scanner(System.in);
         boolean jugarDeNuevo;
         
