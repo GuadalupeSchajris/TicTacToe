@@ -9,6 +9,15 @@
 - Muestra un mensaje de empate si no hay más movimientos posibles.
 - Opción de volver a jugar después de cada partida.
 
+
+## 💻 Tecnologías y herramientas utilizadas:
+
+1. Java 21
+2. Visual Studio Code
+3. Trello
+4. Git / GitHub
+
+
 ## 🚀 Instalación y ejecución
 
 1. Clona este repositorio:
