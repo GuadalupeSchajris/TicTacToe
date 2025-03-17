@@ -38,10 +38,6 @@
 5. Si el tablero se llena sin ganador, se muestra un mensaje de empate.
 6. Al finalizar la partida, puedes elegir jugar de nuevo o salir.
 
-## 🛠️ Tecnologías utilizadas
-- Java ☕
-- Scanner para la entrada de datos
-- Lógica estructurada con bucles y condicionales
 
 ## 📜 Licencia
 Este proyecto está bajo la licencia TicTacToe by Paola Morales & Guadalupe Hani 😃
